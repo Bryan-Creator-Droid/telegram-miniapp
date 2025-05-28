@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Test Mini App</title>
+    <meta charset="UTF-8">
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+  </head>
+  <body style="background:#222;color:#fff;text-align:center;padding-top:40px;">
+    <h1>Mini App OK ✅</h1>
+    <script>
+      try {
+        const tg = window.Telegram.WebApp;
+        tg.expand();
+        document.body.innerHTML += "<p>Utilisateur : " + (tg.initDataUnsafe?.user?.username || "inconnu") + "</p>";
+      } catch (e) {
+        document.body.innerHTML += "<p>Erreur JS : " + e.message + "</p>";
+      }
+    </script>
+  </body>
+</html>
